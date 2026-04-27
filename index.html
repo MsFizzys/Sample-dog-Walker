@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary SEO ── -->
+  <title>Happy Trails Dog Walking | Professional Dog Walker — Marin County, CA</title>
+  <meta name="description" content="Happy Trails Dog Walking offers professional, loving dog walks in Marin County, CA. Fully insured, GPS-tracked walks with small group sizes. Book your first walk today!" />
+  <meta name="keywords" content="dog walker Marin County, dog walking Mill Valley, professional dog walker San Rafael, pet care Marin, dog walks Tiburon, dog walker Fairfax" />
+  <meta name="author" content="Happy Trails Dog Walking" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.happytrailsdogwalking.com/" />
+
+  <!-- ── Open Graph (Social Sharing) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Happy Trails Dog Walking | Marin County's Most Loved Dog Walker" />
+  <meta property="og:description" content="Professional, loving dog walks in Marin County, CA. Small groups, GPS tracking, and a whole lot of tail wags." />
+  <meta property="og:url" content="https://www.happytrailsdogwalking.com/" />
+  <meta property="og:image" content="https://www.happytrailsdogwalking.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Happy Trails Dog Walking" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Happy Trails Dog Walking | Marin County, CA" />
+  <meta name="twitter:description" content="Professional, loving dog walks in Marin County. Small groups, GPS tracking, tail wags guaranteed." />
+  <meta name="twitter:image" content="https://www.happytrailsdogwalking.com/og-image.jpg" />
+
+  <!-- ── Structured Data: Local Business ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Happy Trails Dog Walking",
+    "description": "Professional dog walking services in Marin County, CA. Fully insured, GPS-tracked, small group walks.",
+    "url": "https://www.happytrailsdogwalking.com",
+    "telephone": "+1-415-555-0190",
+    "email": "hello@happytrailsdogwalking.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mill Valley",
+      "addressRegion": "CA",
+      "postalCode": "94941",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.9060,
+      "longitude": -122.5450
+    },
+    "areaServed": ["Mill Valley", "San Rafael", "Tiburon", "Fairfax", "Corte Madera", "Marin County"],
+    "priceRange": "$$",
+    "openingHours": "Mo-Sa 07:00-18:00",
+    "sameAs": [
+      "https://www.instagram.com/happytrailsdogwalking",
+      "https://www.facebook.com/happytrailsdogwalking"
+    ]
+  }
+  </script>
+
+  <!-- ── Structured Data: Person (Walker) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jamie Rivera",
+    "jobTitle": "Professional Dog Walker & Pet Care Specialist",
+    "worksFor": {
+      "@type": "LocalBusiness",
+      "name": "Happy Trails Dog Walking"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mill Valley",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+
+  <!-- ── Favicon placeholder ── -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+
+  <!-- ── Preconnect for performance ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── PAGE-SPECIFIC STYLES ── */
+
+    /* HERO */
+    .hero {
+      padding-top: var(--nav-h);
+      background: linear-gradient(170deg, var(--forest-dark) 0%, var(--forest) 60%, var(--forest-mid) 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 80% 30%, rgba(122,175,230,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 10% 80%, rgba(200,168,75,0.14) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    /* Decorative blobs */
+    .hero-blob {
+      position: absolute;
+      border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+      animation: blobMove 12s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .hero-blob-1 {
+      width: min(500px, 80vw);
+      height: min(500px, 80vw);
+      background: rgba(200,168,75,0.08);
+      top: -10%;
+      right: -15%;
+      animation-delay: 0s;
+    }
+    .hero-blob-2 {
+      width: min(350px, 60vw);
+      height: min(350px, 60vw);
+      background: rgba(122,175,230,0.08);
+      bottom: -5%;
+      left: -10%;
+      animation-delay: 4s;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 4rem var(--side-pad) 5rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,168,75,0.2);
+      border: 1px solid rgba(200,168,75,0.4);
+      color: var(--gold-light);
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+      animation: fadeUp 0.6s ease 0.1s both;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 8vw, 5.8rem);
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease 0.25s both;
+    }
+    .hero-title em {
+      display: block;
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(245,239,224,0.80);
+      max-width: 520px;
+      margin-bottom: 2.25rem;
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.55s both;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.75rem;
+      margin-top: 3rem;
+      animation: fadeUp 0.8s ease 0.7s both;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(245,239,224,0.75);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .trust-icon {
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    /* Floating paw */
+    .hero-paw-float {
+      position: absolute;
+      bottom: 8%;
+      right: 6%;
+      font-size: clamp(4rem, 10vw, 8rem);
+      opacity: 0.07;
+      animation: float 4s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+      line-height: 1;
+    }
+
+    /* Desktop hero: split layout */
+    @media (min-width: 900px) {
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+        padding: 5rem var(--side-pad) 5rem;
+      }
+      .hero-left { grid-column: 1; }
+      .hero-right {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero-sub  { max-width: 460px; }
+    }
+
+    /* Hero photo collage (desktop right side) */
+    .hero-photo-stack {
+      display: none;
+    }
+    @media (min-width: 900px) {
+      .hero-photo-stack {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 14px;
+      }
+      .hero-photo-stack .photo-card {
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-deep);
+      }
+      .hero-photo-stack .photo-card:first-child {
+        grid-column: 1 / -1;
+      }
+      .hero-photo-stack .photo-card .img-placeholder {
+        aspect-ratio: 16/9;
+      }
+      .hero-photo-stack .photo-card:not(:first-child) .img-placeholder {
+        aspect-ratio: 4/3;
+      }
+    }
+
+    /* ── ABOUT SECTION ── */
+    .about-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    @media (min-width: 768px) {
+      .about-wrap {
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+      }
+      .about-photo { flex: 0 0 42%; }
+      .about-text  { flex: 1; }
+    }
+
+    .about-photo-inner {
+      position: relative;
+    }
+    .about-photo-main {
+      aspect-ratio: 4/5;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-deep);
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -1.25rem;
+      right: -1rem;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow-med);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .about-badge .badge-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1;
+    }
+
+    .about-text .section-title { margin-bottom: 1.25rem; }
+
+    .about-text p {
+      font-size: 1.02rem;
+      color: var(--text-mid);
+      margin-bottom: 1rem;
+    }
+    .about-text p:last-of-type { margin-bottom: 1.75rem; }
+
+    .values-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .values-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .val-icon {
+      width: 30px; height: 30px;
+      background: var(--gold-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── SERVICES SECTION ── */
+    .services-bg {
+      background: var(--forest-dark);
+      color: var(--cream);
+    }
+    .services-bg .section-label { color: var(--gold-light); }
+    .services-bg .section-title { color: var(--white); }
+    .services-bg .section-title em { color: var(--gold-light); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    @media (min-width: 600px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 900px) {
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .service-card:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-4px);
+    }
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      display: block;
+      animation: float 3s ease-in-out infinite;
+    }
+    .service-card:nth-child(2) .service-icon { animation-delay: 0.6s; }
+    .service-card:nth-child(3) .service-icon { animation-delay: 1.2s; }
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .service-desc {
+      font-size: 0.9rem;
+      opacity: 0.72;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .service-price {
+      font-weight: 800;
+      color: var(--gold-light);
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── TESTIMONIAL STRIP ── */
+    .testimonial-strip {
+      background: var(--gold-pale);
+      padding: 4rem 0;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 768px) {
+      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .stars { color: var(--gold); font-size: 1rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+    .testimonial-text {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .testimonial-author {
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--forest);
+    }
+    .testimonial-dog {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(130deg, var(--forest) 0%, var(--forest-mid) 100%);
+      border-radius: var(--radius-xl);
+      margin: 0 var(--side-pad);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '🐾';
+      position: absolute;
+      font-size: 12rem;
+      opacity: 0.05;
+      top: -2rem;
+      right: -2rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      margin-bottom: 0.75rem;
+    }
+    .cta-banner p {
+      opacity: 0.8;
+      max-width: 460px;
+      margin: 0 auto 1.75rem;
+      font-size: 1.02rem;
+    }
+    .cta-banner .btn-gold {
+      font-size: 1rem;
+      padding: 16px 38px;
+    }
+    .cta-section { padding-bottom: 80px; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ── NAV ── -->
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Happy Trails Dog Walking — Home">
+        <span class="paw" aria-hidden="true">🐾</span>
+        <div class="nav-logo-text">
+          Happy Trails
+          <span>Dog Walking</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="request.html">Book a Walk</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <header class="hero" role="banner">
+    <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+    <span class="hero-paw-float" aria-hidden="true">🐾</span>
+
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span aria-hidden="true">🌲</span> Marin County's Most Trusted Dog Walker
+        </div>
+
+        <h1 class="hero-title">
+          Every Walk is an
+          <em>Adventure.</em>
+        </h1>
+
+        <p class="hero-sub">
+          Professional, loving dog walks rooted in Marin's trails, forests, and wide-open skies. Your pup deserves the best — and we deliver it, every single day.
+        </p>
+
+        <div class="hero-actions">
+          <a href="request.html" class="btn btn-gold btn-lg">Book a Walk 🐕</a>
+          <a href="gallery.html" class="btn btn-outline" style="color:var(--cream); border-color:rgba(245,239,224,0.5);">See the Fun</a>
+        </div>
+
+        <div class="hero-trust" aria-label="Trust indicators">
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">✅</div>
+            <span>Fully Insured</span>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">📍</div>
+            <span>GPS-Tracked Walks</span>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">🐶</div>
+            <span>Small Group Sizes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop hero photo collage -->
+      <div class="hero-right">
+        <div class="hero-photo-stack" aria-label="Photos from our dog walks">
+          <div class="photo-card">
+            <div class="img-placeholder" style="aspect-ratio:16/9;" role="img" aria-label="Dogs on a trail walk in Marin">
+              <span class="ph-icon" aria-hidden="true">🐕</span>
+              <span>Trail Walk Photo</span>
+            </div>
+          </div>
+          <div class="photo-card">
+            <div class="img-placeholder sky-grad" style="aspect-ratio:4/3;" role="img" aria-label="Happy dogs playing outdoors">
+              <span class="ph-icon" aria-hidden="true">🌲</span>
+              <span>Forest Walk</span>
+            </div>
+          </div>
+          <div class="photo-card">
+            <div class="img-placeholder gold-grad" style="aspect-ratio:4/3;" role="img" aria-label="Dog enjoying Marin hills">
+              <span class="ph-icon" aria-hidden="true">☀️</span>
+              <span>Golden Hills</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main id="main-content">
+
+    <!-- ── ABOUT ── -->
+    <section class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-wrap">
+
+          <div class="about-photo anim-fade-up">
+            <div class="about-photo-inner">
+              <div class="about-photo-main">
+                <div class="img-placeholder" style="aspect-ratio:4/5;" role="img" aria-label="Jamie Rivera, professional dog walker, with a group of happy dogs in Marin">
+                  <span class="ph-icon" aria-hidden="true">🧡</span>
+                  <span>Walker Photo</span>
+                </div>
+              </div>
+              <div class="about-badge" aria-label="6 years of professional dog walking experience">
+                <div>
+                  <div class="badge-num">6+</div>
+                  <div style="font-size:0.7rem; color:var(--text-light); font-weight:700; text-transform:uppercase; letter-spacing:0.1em;">Years of<br>Happy Walks</div>
+                </div>
+                <span style="font-size:1.8rem;" aria-hidden="true">🐾</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text anim-fade-up anim-delay-2">
+            <span class="section-label">About Jamie</span>
+            <h2 class="section-title" id="about-heading">
+              A Lifelong Love for <em>Dogs & the Outdoors</em>
+            </h2>
+
+            <p>
+              From the moment I could walk, I was walking dogs. Growing up just minutes from the redwoods and open ridgelines of Marin County, I fell in love with the trails — and I can't imagine a better way to share them than with a pack of joyful, tail-wagging companions by my side.
+            </p>
+            <p>
+              Over the last six years, I've turned that passion into a full-time profession. I've had the privilege of walking hundreds of dogs across Marin — from spunky terriers to laid-back golden retrievers — and I treat every single one like they're my own. To me, a great walk isn't just exercise. It's connection, enrichment, and the simple joy of being outside.
+            </p>
+            <p>
+              I keep my groups small so every dog gets the attention they deserve. I'm Pet First Aid certified, fully insured, and I send photo updates on every walk so you can see exactly how much fun your pup is having.
+            </p>
+
+            <ul class="values-list" aria-label="Our commitments">
+              <li>
+                <div class="val-icon" aria-hidden="true">🌿</div>
+                <span><strong>Nature-first walks</strong> — trails, parks, and green spaces, not just sidewalks</span>
+              </li>
+              <li>
+                <div class="val-icon" aria-hidden="true">🔒</div>
+                <span><strong>Safety always</strong> — fully insured, Pet First Aid certified, GPS tracking on every walk</span>
+              </li>
+              <li>
+                <div class="val-icon" aria-hidden="true">📸</div>
+                <span><strong>Photo updates</strong> — you'll never wonder if your pup is having a good time</span>
+              </li>
+              <li>
+                <div class="val-icon" aria-hidden="true">👥</div>
+                <span><strong>Small groups</strong> — max 4 dogs per walk so every dog gets real attention</span>
+              </li>
+            </ul>
+
+            <a href="request.html" class="btn btn-primary">Book Your First Walk →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="paw-divider" aria-hidden="true">🐾 🐾 🐾</div>
+
+    <!-- ── SERVICES ── -->
+    <section class="services-bg section" aria-labelledby="services-heading">
+      <div class="container">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title" id="services-heading">
+          Services Built for <em>Happy Dogs</em>
+        </h2>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">🌲</span>
+            <h3 class="service-name">Group Trail Walk</h3>
+            <p class="service-desc">60-minute adventure walks on Marin's best trails with up to 4 dogs. Fresh air, great sniffs, and new friends.</p>
+            <div class="service-price">From $28 / walk</div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">🐕</span>
+            <h3 class="service-name">Private Walk</h3>
+            <p class="service-desc">A solo adventure just for your dog. Ideal for anxious pups or those who prefer one-on-one attention and personalized routing.</p>
+            <div class="service-price">From $45 / walk</div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">🌅</span>
+            <h3 class="service-name">Sunrise Walk</h3>
+            <p class="service-desc">Early morning walks before your workday begins. Start your pup's day right with golden hour light and quiet trails.</p>
+            <div class="service-price">From $32 / walk</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ── -->
+    <section class="testimonial-strip" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <span class="section-label" style="text-align:center; display:block;">Happy Families</span>
+        <h2 class="section-title" id="testimonials-heading" style="text-align:center; margin-bottom:2rem;">
+          What Dog Parents <em>Are Saying</em>
+        </h2>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-text">"Jamie is incredible. Biscuit used to be anxious on walks with other dogs — now he can't wait to go. The photo updates every walk are such a thoughtful touch."</p>
+            <div class="testimonial-author">Sarah M.</div>
+            <div class="testimonial-dog">— Mom of Biscuit, 3yr Goldendoodle</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-text">"We've tried other dog walkers in Marin but nobody comes close. Happy Trails treats our girl like family. Highly recommend to anyone who wants their dog truly cared for."</p>
+            <div class="testimonial-author">Tom & Priya K.</div>
+            <div class="testimonial-dog">— Parents of Luna, 5yr Labrador</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-text">"The GPS tracking gives me such peace of mind. I can see exactly where they are, and the pictures of Moose on the trail put the biggest smile on my face every time."</p>
+            <div class="testimonial-author">Rachel T.</div>
+            <div class="testimonial-dog">— Mom of Moose, 2yr Bernese Mountain Dog</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="cta-banner" role="complementary">
+        <h2 id="cta-heading">Ready for the Best Walk of Their Life?</h2>
+        <p>Fill out our quick request form and we'll be in touch within 24 hours to set up a meet & greet.</p>
+        <a href="request.html" class="btn btn-gold">Request a Walk Today 🐾</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">Happy Trails 🐾</div>
+      <p class="footer-tagline">Professional Dog Walking · Marin County, CA</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="request.html">Book a Walk</a></li>
+        </ul>
+      </nav>
+      <div class="footer-paws" aria-hidden="true">🐾 🐾 🐾</div>
+      <p class="footer-copy">© 2025 Happy Trails Dog Walking · Mill Valley, CA · hello@happytrailsdogwalking.com</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Mobile nav toggle ──
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    // Close menu on link click
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    // Close on outside tap
+    document.addEventListener('click', e => {
+      if (!e.target.closest('nav')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // ── Scroll-triggered fade-up ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.animationPlayState = 'running';
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.anim-fade-up').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
