@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary SEO ── -->
+  <title>Photo Gallery | Happy Trails Dog Walking — Marin County, CA</title>
+  <meta name="description" content="See the joy in action! Browse photos of our Marin County dog walks — happy pups on trails, in the redwoods, and soaking up the California sunshine." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.happytrailsdogwalking.com/gallery.html" />
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gallery | Happy Trails Dog Walking — Marin County" />
+  <meta property="og:description" content="Happy pups on Marin's best trails. Browse our walk photo gallery." />
+  <meta property="og:url" content="https://www.happytrailsdogwalking.com/gallery.html" />
+  <meta property="og:image" content="https://www.happytrailsdogwalking.com/og-image.jpg" />
+
+  <!-- ── Breadcrumb Structured Data ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://www.happytrailsdogwalking.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://www.happytrailsdogwalking.com/gallery.html" }
+    ]
+  }
+  </script>
+
+  <!-- ── Image Gallery Structured Data ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Happy Trails Dog Walking — Walk Photo Gallery",
+    "description": "Photos from our dog walks across Marin County trails, parks, and open spaces.",
+    "url": "https://www.happytrailsdogwalking.com/gallery.html",
+    "author": {
+      "@type": "LocalBusiness",
+      "name": "Happy Trails Dog Walking"
+    }
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding-top: var(--nav-h);
+      background: linear-gradient(160deg, var(--forest-dark) 0%, var(--forest) 70%, var(--forest-mid) 100%);
+      color: var(--white);
+      text-align: center;
+      padding-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 4rem var(--side-pad) 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .page-header .section-label { color: var(--gold-light); text-align: center; display: block; }
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .page-header h1 em { font-style: italic; color: var(--gold-light); }
+    .page-header p {
+      font-size: 1.05rem;
+      opacity: 0.78;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .header-paws {
+      font-size: 2.5rem;
+      letter-spacing: 0.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* ── FILTER TABS ── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      padding: 2rem var(--side-pad) 0;
+    }
+    .filter-btn {
+      padding: 9px 20px;
+      border-radius: 100px;
+      border: 2px solid var(--tan);
+      background: var(--white);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--forest);
+      border-color: var(--forest);
+      color: var(--white);
+    }
+
+    /* ── PHOTO GRID ── */
+    .gallery-section { padding: 2.5rem 0 80px; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+    @media (min-width: 540px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 900px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      /* Feature first photo large */
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+    }
+
+    /* Individual gallery item */
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      background: var(--tan);
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: var(--shadow-deep);
+    }
+    .gallery-item:focus-within {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* Photo placeholder fills */
+    .gallery-item .img-placeholder {
+      aspect-ratio: 4/3;
+    }
+    .gallery-item:first-child .img-placeholder {
+      aspect-ratio: 16/8;
+    }
+    @media (max-width: 539px) {
+      .gallery-item .img-placeholder { aspect-ratio: 3/2; }
+    }
+
+    /* Hover overlay */
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(42,69,48,0.88) 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .gallery-item:hover .gallery-overlay,
+    .gallery-item:focus-within .gallery-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .overlay-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+    .overlay-meta {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    /* Like button */
+    .like-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s ease, background 0.2s;
+      -webkit-tap-highlight-color: transparent;
+      z-index: 2;
+    }
+    .like-btn:hover { transform: scale(1.15); background: var(--white); }
+    .like-btn.liked { animation: pop 0.3s ease; }
+    @keyframes pop {
+      0%,100% { transform: scale(1); }
+      50%      { transform: scale(1.35); }
+    }
+
+    /* ── GRADIENT VARIANTS for placeholders ── */
+    .grad-1 { background: linear-gradient(140deg, #2A4530 0%, #4E7A52 55%, #7AAFE6 100%); }
+    .grad-2 { background: linear-gradient(140deg, #5C3D2E 0%, #8B6347 55%, #C8A84B 100%); }
+    .grad-3 { background: linear-gradient(140deg, #3B5E3F 0%, #7AAFE6 55%, #C8DFF5 100%); }
+    .grad-4 { background: linear-gradient(140deg, #2A4530 0%, #3B5E3F 60%, #4E7A52 100%); }
+    .grad-5 { background: linear-gradient(140deg, #C8A84B 0%, #8B6347 55%, #5C3D2E 100%); }
+    .grad-6 { background: linear-gradient(140deg, #7AAFE6 0%, #3B5E3F 55%, #2A4530 100%); }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20,32,24,0.92);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-inner {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: var(--shadow-deep);
+      position: relative;
+    }
+    .lightbox-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 0.9rem; right: 0.9rem;
+      width: 40px; height: 40px;
+      background: var(--white);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-med);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+      z-index: 2;
+    }
+    .lightbox-close:hover { background: var(--cream); }
+    .lightbox-caption {
+      padding: 1.25rem 1.5rem;
+    }
+    .lightbox-caption h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--forest);
+      margin-bottom: 0.25rem;
+    }
+    .lightbox-caption p { font-size: 0.9rem; color: var(--text-mid); }
+
+    /* ── CTA strip ── */
+    .gallery-cta {
+      text-align: center;
+      background: var(--gold-pale);
+      padding: 4rem var(--side-pad);
+    }
+    .gallery-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      color: var(--forest);
+      margin-bottom: 0.75rem;
+    }
+    .gallery-cta p { color: var(--text-mid); margin-bottom: 1.5rem; }
+
+    /* Animation */
+    .gallery-item {
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+    .gallery-item:nth-child(1) { animation-delay: 0.05s; }
+    .gallery-item:nth-child(2) { animation-delay: 0.15s; }
+    .gallery-item:nth-child(3) { animation-delay: 0.25s; }
+    .gallery-item:nth-child(4) { animation-delay: 0.35s; }
+    .gallery-item:nth-child(5) { animation-delay: 0.45s; }
+    .gallery-item:nth-child(6) { animation-delay: 0.55s; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ── NAV ── -->
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Happy Trails Dog Walking — Home">
+        <span class="paw" aria-hidden="true">🐾</span>
+        <div class="nav-logo-text">
+          Happy Trails
+          <span>Dog Walking</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html" class="active" aria-current="page">Gallery</a></li>
+        <li><a href="request.html">Book a Walk</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header" role="banner">
+    <div class="page-header-inner">
+      <span class="header-paws" aria-hidden="true">🐕 🌲 🐕</span>
+      <span class="section-label">Walk Gallery</span>
+      <h1>Adventures in <em>Every Frame</em></h1>
+      <p>A peek into the joy, the trails, and the very good boys (and girls) of Happy Trails Dog Walking.</p>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main id="main-content">
+
+    <!-- Filter bar -->
+    <div class="filter-bar" role="group" aria-label="Filter photos by category">
+      <button class="filter-btn active" data-filter="all">All Photos</button>
+      <button class="filter-btn" data-filter="trail">Trail Walks</button>
+      <button class="filter-btn" data-filter="group">Group Fun</button>
+      <button class="filter-btn" data-filter="nature">Nature Moments</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Walk Photo Gallery</h2>
+
+      <div class="gallery-grid" id="gallery-grid">
+
+        <!-- Photo 1 — Featured wide -->
+        <article class="gallery-item" data-category="trail" tabindex="0" role="button" aria-label="View photo: Golden Hour Trail Run — open for details">
+          <button class="like-btn" aria-label="Like this photo" data-liked="false">🤍</button>
+          <div class="img-placeholder grad-1" role="img" aria-label="Dogs running along a sun-drenched Marin trail at golden hour">
+            <span class="ph-icon" aria-hidden="true">🌅</span>
+            <span>Golden Hour Trail Run</span>
+          </div>
+          <div class="gallery-overlay" aria-hidden="true">
+            <div class="overlay-title">Golden Hour Trail Run</div>
+            <div class="overlay-meta">📍 Tennessee Valley · 8 Dogs</div>
+          </div>
+        </article>
+
+        <!-- Photo 2 -->
+        <article class="gallery-item" data-category="nature" tabindex="0" role="button" aria-label="View photo: Into the Redwoods">
+          <button class="like-btn" aria-label="Like this photo" data-liked="false">🤍</button>
+          <div class="img-placeholder grad-2" role="img" aria-label="Dogs exploring a redwood forest trail in Marin">
+            <span class="ph-icon" aria-hidden="true">🌲</span>
+            <span>Into the Redwoods</span>
+          </div>
+          <div class="gallery-overlay" aria-hidden="true">
+            <div class="overlay-title">Into the Redwoods</div>
+            <div class="overlay-meta">📍 Muir Woods Adjacent · 4 Dogs</div>
+          </div>
+        </article>
+
+        <!-- Photo 3 -->
+        <article class="gallery-item" data-category="group" tabindex="0" role="button" aria-label="View photo: The Happy Pack">
+          <button class="like-btn" aria-label="Like this photo" data-liked="false">🤍</button>
+          <div class="img-placeholder grad-3" role="img" aria-label="A joyful group of dogs posing together on a hillside">
+            <span class="ph-icon" aria-hidden="true">🐶</span>
+            <span>The Happy Pack</span>
+          </div>
+          <div class="gallery-overlay" aria-hidden="true">
+            <div class="overlay-title">The Happy Pack</div>
+            <div class="overlay-meta">📍 Ring Mountain · 5 Dogs</div>
+          </div>
+        </article>
+
+        <!-- Photo 4 -->
+        <article class="gallery-item" data-category="trail" tabindex="0" role="button" aria-label="View photo: Ridge Line Views">
+          <button class="like-btn" aria-label="Like this photo" data-liked="false">🤍</button>
+          <div class="img-placeholder grad-4" role="img" aria-label="Dogs on a ridge trail with sweeping views of Marin hills">
+            <span class="ph-icon" aria-hidden="true">⛰️</span>
+            <span>Ridge Line Views</span>
+          </div>
+          <div class="gallery-overlay" aria-hidden="true">
+            <div class="overlay-title">Ridge Line Views</div>
+            <div class="overlay-meta">📍 Mt. Tamalpais Foothills · 3 Dogs</div>
+          </div>
+        </article>
+
+        <!-- Photo 5 -->
+        <article class="gallery-item" data-category="nature" tabindex="0" role="button" aria-label="View photo: Creek Crossing Adventure">
+          <button class="like-btn" aria-label="Like this photo" data-liked="false">🤍</button>
+          <div class="img-placeholder grad-5" role="img" aria-label="Dogs splashing through a creek on a Marin trail">
+            <span class="ph-icon" aria-hidden="true">💧</span>
+            <span>Creek Crossing Adventure</span>
+          </div>
+          <div class="gallery-overlay" aria-hidden="true">
+            <div class="overlay-title">Creek Crossing Adventure</div>
+            <div class="overlay-meta">📍 Cascade Falls Trail · 4 Dogs</div>
+          </div>
+        </article>
+
+        <!-- Photo 6 -->
+        <article class="gallery-item" data-category="group" tabindex="0" role="button" aria-label="View photo: Sunset Squad">
+          <button class="like-btn" aria-label="Like this photo" data-liked="false">🤍</button>
+          <div class="img-placeholder grad-6" role="img" aria-label="Dogs silhouetted against a Marin sunset sky">
+            <span class="ph-icon" aria-hidden="true">🌄</span>
+            <span>Sunset Squad</span>
+          </div>
+          <div class="gallery-overlay" aria-hidden="true">
+            <div class="overlay-title">Sunset Squad</div>
+            <div class="overlay-meta">📍 Tiburon Ridge · 6 Dogs</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo detail view">
+      <div class="lightbox-inner">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close photo">✕</button>
+        <div class="lightbox-img img-placeholder" id="lightbox-img" role="img">
+          <span class="ph-icon" aria-hidden="true">🐕</span>
+          <span id="lightbox-title-placeholder">Photo</span>
+        </div>
+        <div class="lightbox-caption">
+          <h3 id="lightbox-title">Photo Title</h3>
+          <p id="lightbox-meta">Location · Dogs</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CTA ── -->
+    <section class="gallery-cta" aria-labelledby="gallery-cta-heading">
+      <h2 id="gallery-cta-heading">Want Your Pup in the Next Gallery?</h2>
+      <p>Book a walk and we'll send you photos of every adventure.</p>
+      <a href="request.html" class="btn btn-primary btn-lg">Book a Walk 🐾</a>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">Happy Trails 🐾</div>
+      <p class="footer-tagline">Professional Dog Walking · Marin County, CA</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="request.html">Book a Walk</a></li>
+        </ul>
+      </nav>
+      <div class="footer-paws" aria-hidden="true">🐾 🐾 🐾</div>
+      <p class="footer-copy">© 2025 Happy Trails Dog Walking · Mill Valley, CA · hello@happytrailsdogwalking.com</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Mobile nav ──
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.addEventListener('click', e => {
+      if (!e.target.closest('nav')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // ── Filter tabs ──
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items      = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          const match = filter === 'all' || item.dataset.category === filter;
+          item.style.display = match ? '' : 'none';
+        });
+      });
+    });
+
+    // ── Like buttons ──
+    document.querySelectorAll('.like-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const liked = btn.dataset.liked === 'true';
+        btn.dataset.liked = !liked;
+        btn.textContent = liked ? '🤍' : '❤️';
+        btn.classList.toggle('liked', !liked);
+        btn.setAttribute('aria-label', liked ? 'Like this photo' : 'Unlike this photo');
+      });
+    });
+
+    // ── Lightbox ──
+    const lightbox        = document.getElementById('lightbox');
+    const lbImg           = document.getElementById('lightbox-img');
+    const lbTitle         = document.getElementById('lightbox-title');
+    const lbMeta          = document.getElementById('lightbox-meta');
+    const lbTitlePH       = document.getElementById('lightbox-title-placeholder');
+    const lbClose         = document.getElementById('lightbox-close');
+
+    const gradMap = ['grad-1','grad-2','grad-3','grad-4','grad-5','grad-6'];
+
+    items.forEach((item, i) => {
+      function openLightbox() {
+        const title = item.querySelector('.overlay-title').textContent;
+        const meta  = item.querySelector('.overlay-meta').textContent;
+        const icon  = item.querySelector('.ph-icon').textContent;
+        lbImg.className = `lightbox-img img-placeholder ${gradMap[i] || 'grad-1'}`;
+        lbImg.setAttribute('role','img');
+        lbImg.setAttribute('aria-label', title);
+        lbTitlePH.textContent = title;
+        lbImg.querySelector && (lbImg.innerHTML = `<span class="ph-icon" aria-hidden="true">${icon}</span><span>${title}</span>`);
+        lbTitle.textContent = title;
+        lbMeta.textContent  = meta;
+        lightbox.classList.add('open');
+        lbClose.focus();
+        document.body.style.overflow = 'hidden';
+      }
+      item.addEventListener('click', openLightbox);
+      item.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(); }
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // Rebuild lightbox img content properly
+    items.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        const icon  = item.querySelector('.ph-icon').textContent;
+        const title = item.querySelector('.overlay-title').textContent;
+        lbImg.className = `lightbox-img img-placeholder ${gradMap[i] || 'grad-1'}`;
+        lbImg.innerHTML = `<span class="ph-icon" aria-hidden="true">${icon}</span><span>${title}</span>`;
+        lbTitle.textContent = title;
+        lbMeta.textContent  = item.querySelector('.overlay-meta').textContent;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+      });
+    });
+  </script>
+</body>
+</html>
