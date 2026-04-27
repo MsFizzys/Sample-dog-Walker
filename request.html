@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary SEO ── -->
+  <title>Book a Walk | Happy Trails Dog Walking — Marin County, CA</title>
+  <meta name="description" content="Ready to book? Fill out our simple dog walking request form and we'll be in touch within 24 hours to set up a meet & greet for your pup." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.happytrailsdogwalking.com/request.html" />
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Book a Walk | Happy Trails Dog Walking — Marin County" />
+  <meta property="og:description" content="Book a professional dog walk in Marin County. Small groups, GPS tracking, photo updates every walk." />
+  <meta property="og:url" content="https://www.happytrailsdogwalking.com/request.html" />
+  <meta property="og:image" content="https://www.happytrailsdogwalking.com/og-image.jpg" />
+
+  <!-- ── Breadcrumb Structured Data ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",        "item": "https://www.happytrailsdogwalking.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Book a Walk", "item": "https://www.happytrailsdogwalking.com/request.html" }
+    ]
+  }
+  </script>
+
+  <!-- ── Service Structured Data ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Dog Walking — Walk Request",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Happy Trails Dog Walking",
+      "url": "https://www.happytrailsdogwalking.com"
+    },
+    "areaServed": "Marin County, CA",
+    "description": "Professional dog walking service in Marin County. Request a walk via our online form."
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding-top: var(--nav-h);
+      background: linear-gradient(160deg, var(--bark) 0%, var(--redwood) 50%, var(--forest-dark) 100%);
+      color: var(--white);
+      text-align: center;
+      padding-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 110%, rgba(200,168,75,0.2) 0%, transparent 60%);
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 4rem var(--side-pad) 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .page-header .section-label { color: var(--gold-light); display: block; }
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .page-header h1 em { font-style: italic; color: var(--gold-light); }
+    .page-header p { font-size: 1.02rem; opacity: 0.78; max-width: 500px; margin: 0 auto; }
+
+    /* ── FORM LAYOUT ── */
+    .form-section { padding: 3rem 0 80px; }
+
+    .form-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    /* Progress steps */
+    .form-steps {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 2.5rem;
+    }
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .step-circle {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--tan);
+      color: var(--text-mid);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+    .step-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin: 0 0.75rem;
+      white-space: nowrap;
+    }
+    .step-line {
+      flex: 1;
+      height: 2px;
+      background: var(--tan);
+      min-width: 20px;
+    }
+    .step-item.active .step-circle {
+      background: var(--forest);
+      color: var(--white);
+    }
+    .step-item.active .step-label { color: var(--forest); }
+    .step-item.done .step-circle {
+      background: var(--gold);
+      color: var(--white);
+    }
+    @media (max-width: 540px) {
+      .step-label { display: none; }
+      .step-line { min-width: 14px; }
+    }
+
+    /* Form card */
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-deep);
+      padding: 2.5rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (min-width: 600px) {
+      .form-card { padding: 3rem 2.5rem; }
+    }
+
+    /* Section groups */
+    .form-group-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--cream-dark);
+    }
+    .form-group-label .group-icon {
+      width: 38px; height: 38px;
+      background: var(--gold-pale);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.1rem;
+    }
+    @media (min-width: 540px) {
+      .form-grid.two-col { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* Field wrapper */
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+    }
+    label .required {
+      color: var(--bark);
+      margin-left: 2px;
+    }
+    .field-hint {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-weight: 500;
+      margin-top: -2px;
+      margin-bottom: 2px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 2px solid var(--tan);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-dark);
+      background: var(--cream);
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+      outline: none;
+    }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--forest);
+      box-shadow: 0 0 0 3px rgba(59,94,63,0.12);
+      background: var(--white);
+    }
+    input.error,
+    select.error,
+    textarea.error {
+      border-color: #C0392B;
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
+    }
+    .error-msg {
+      font-size: 0.78rem;
+      color: #C0392B;
+      font-weight: 600;
+      display: none;
+    }
+    .error-msg.show { display: block; }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A4433' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 42px;
+    }
+
+    textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+
+    /* Radio / Checkbox pill group */
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .pill-group input[type="radio"],
+    .pill-group input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0; height: 0;
+      pointer-events: none;
+    }
+    .pill-group label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border: 2px solid var(--tan);
+      border-radius: 100px;
+      background: var(--cream);
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .pill-group input:checked + label {
+      background: var(--forest);
+      border-color: var(--forest);
+      color: var(--white);
+    }
+    .pill-group input:focus + label {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    /* Range slider */
+    .range-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+    .range-value {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--forest);
+      text-align: center;
+    }
+    input[type="range"] {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      background: linear-gradient(to right, var(--forest) 0%, var(--forest) 50%, var(--tan) 50%, var(--tan) 100%);
+      border-radius: 6px;
+      outline: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px; height: 22px;
+      background: var(--forest);
+      border-radius: 50%;
+      cursor: pointer;
+      border: 3px solid var(--white);
+      box-shadow: 0 2px 8px rgba(59,94,63,0.35);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 22px; height: 22px;
+      background: var(--forest);
+      border-radius: 50%;
+      cursor: pointer;
+      border: 3px solid var(--white);
+      box-shadow: 0 2px 8px rgba(59,94,63,0.35);
+    }
+
+    /* Divider between sections */
+    .form-divider {
+      border: none;
+      border-top: 2px dashed var(--tan);
+      margin: 2rem 0;
+    }
+
+    /* Special note box */
+    .note-box {
+      background: var(--sky-pale);
+      border-left: 4px solid var(--sky);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1rem 1.25rem;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .note-box strong { color: var(--forest); }
+
+    /* Checkbox single */
+    .checkbox-field {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+    }
+    .checkbox-field input[type="checkbox"] {
+      width: 20px; height: 20px;
+      min-width: 20px;
+      margin-top: 2px;
+      border: 2px solid var(--tan);
+      border-radius: 5px;
+      background: var(--cream);
+      cursor: pointer;
+      accent-color: var(--forest);
+    }
+    .checkbox-field span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      line-height: 1.5;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* Submit area */
+    .submit-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .submit-area .btn {
+      width: 100%;
+      max-width: 340px;
+      padding: 18px 36px;
+      font-size: 1.05rem;
+    }
+    .submit-note {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+    .submit-note a { color: var(--forest); text-decoration: underline; }
+
+    /* ── SUCCESS STATE ── */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+    .success-screen.show { display: block; }
+    .success-icon {
+      font-size: 5rem;
+      margin-bottom: 1.25rem;
+      display: block;
+      animation: float 3s ease-in-out infinite;
+    }
+    .success-screen h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--forest);
+      margin-bottom: 0.75rem;
+    }
+    .success-screen p {
+      color: var(--text-mid);
+      max-width: 400px;
+      margin: 0 auto 1.75rem;
+    }
+
+    /* ── Sidebar trust block (desktop) ── */
+    .form-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+    @media (min-width: 900px) {
+      .form-layout {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .form-main  { flex: 1; }
+      .form-aside { flex: 0 0 280px; position: sticky; top: calc(var(--nav-h) + 2rem); }
+    }
+
+    .aside-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 1.75rem;
+    }
+    .aside-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--forest);
+      margin-bottom: 1.1rem;
+    }
+    .aside-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .aside-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+    .aside-list .ai {
+      width: 28px; height: 28px;
+      background: var(--gold-pale);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .aside-divider { border: none; border-top: 1.5px solid var(--cream-dark); margin: 1.25rem 0; }
+    .aside-contact {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .aside-contact a { color: var(--forest); font-weight: 700; }
+    .aside-contact strong { display: block; color: var(--text-dark); font-size: 0.88rem; margin-bottom: 0.25rem; }
+
+    /* Hide aside on mobile, show inline instead */
+    .mobile-trust {
+      background: var(--forest-dark);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 0 var(--side-pad) 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      justify-content: center;
+    }
+    .mobile-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: rgba(245,239,224,0.85);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .mobile-trust-item .ti {
+      width: 28px; height: 28px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+    }
+    @media (min-width: 900px) { .mobile-trust { display: none; } }
+    @media (min-width: 900px) { .form-wrapper { max-width: 100%; padding: 0; } }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ── NAV ── -->
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Happy Trails Dog Walking — Home">
+        <span class="paw" aria-hidden="true">🐾</span>
+        <div class="nav-logo-text">
+          Happy Trails
+          <span>Dog Walking</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="request.html" class="active" aria-current="page">Book a Walk</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header" role="banner">
+    <div class="page-header-inner">
+      <span class="section-label">Walk Request Form</span>
+      <h1>Let's Get Your Pup <em>Out There!</em></h1>
+      <p>Fill out the form below and we'll reach out within 24 hours to schedule a free meet & greet.</p>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main id="main-content">
+
+    <section class="form-section">
+
+      <!-- Mobile trust strip -->
+      <div class="mobile-trust" role="list" aria-label="Why choose Happy Trails">
+        <div class="mobile-trust-item" role="listitem">
+          <div class="ti" aria-hidden="true">✅</div> Fully Insured
+        </div>
+        <div class="mobile-trust-item" role="listitem">
+          <div class="ti" aria-hidden="true">📍</div> GPS Every Walk
+        </div>
+        <div class="mobile-trust-item" role="listitem">
+          <div class="ti" aria-hidden="true">📸</div> Photo Updates
+        </div>
+        <div class="mobile-trust-item" role="listitem">
+          <div class="ti" aria-hidden="true">💬</div> Reply in 24 hrs
+        </div>
+      </div>
+
+      <div class="form-layout">
+        <!-- ── FORM MAIN ── -->
+        <div class="form-main">
+
+          <!-- Progress steps -->
+          <div class="form-steps" role="list" aria-label="Form progress">
+            <div class="step-item active" role="listitem">
+              <div class="step-circle" aria-label="Step 1 of 3 - current">1</div>
+              <span class="step-label">About You</span>
+            </div>
+            <div class="step-line" aria-hidden="true"></div>
+            <div class="step-item" role="listitem">
+              <div class="step-circle" aria-label="Step 2 of 3">2</div>
+              <span class="step-label">Your Dog</span>
+            </div>
+            <div class="step-line" aria-hidden="true"></div>
+            <div class="step-item" role="listitem">
+              <div class="step-circle" aria-label="Step 3 of 3">3</div>
+              <span class="step-label">Walk Details</span>
+            </div>
+          </div>
+
+          <!-- FORM CARD -->
+          <div class="form-card">
+
+            <!-- Success screen (hidden until submit) -->
+            <div class="success-screen" id="success-screen" aria-live="polite">
+              <span class="success-icon" aria-hidden="true">🎉</span>
+              <h2>You're All Set!</h2>
+              <p>Thanks for reaching out! We'll review your request and get back to you within <strong>24 hours</strong> to schedule a free meet & greet.</p>
+              <a href="gallery.html" class="btn btn-primary">See Our Happy Pack →</a>
+            </div>
+
+            <form id="walk-request-form" novalidate aria-label="Dog walk request form">
+
+              <!-- ── SECTION 1: About You ── -->
+              <fieldset>
+                <legend class="form-group-label">
+                  <div class="group-icon" aria-hidden="true">👤</div>
+                  About You
+                </legend>
+
+                <div class="form-grid two-col">
+                  <div class="field">
+                    <label for="first-name">First Name <span class="required" aria-label="required">*</span></label>
+                    <input type="text" id="first-name" name="first_name" placeholder="Sarah" autocomplete="given-name" required />
+                    <span class="error-msg" id="err-first-name">Please enter your first name.</span>
+                  </div>
+                  <div class="field">
+                    <label for="last-name">Last Name <span class="required" aria-label="required">*</span></label>
+                    <input type="text" id="last-name" name="last_name" placeholder="Johnson" autocomplete="family-name" required />
+                    <span class="error-msg" id="err-last-name">Please enter your last name.</span>
+                  </div>
+                  <div class="field">
+                    <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+                    <span class="error-msg" id="err-email">Please enter a valid email address.</span>
+                  </div>
+                  <div class="field">
+                    <label for="phone">Phone Number <span class="required" aria-label="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="(415) 555-0100" autocomplete="tel" required />
+                    <span class="error-msg" id="err-phone">Please enter your phone number.</span>
+                  </div>
+                  <div class="field full">
+                    <label for="address">Your Address / Neighborhood <span class="required" aria-label="required">*</span></label>
+                    <div class="field-hint">We serve Marin County — Mill Valley, San Rafael, Tiburon, Fairfax, Corte Madera, and surrounding areas.</div>
+                    <input type="text" id="address" name="address" placeholder="Mill Valley, CA 94941" autocomplete="street-address" required />
+                    <span class="error-msg" id="err-address">Please enter your address or neighborhood.</span>
+                  </div>
+                  <div class="field full">
+                    <label for="how-heard">How did you hear about us?</label>
+                    <select id="how-heard" name="how_heard">
+                      <option value="">— Select one —</option>
+                      <option value="google">Google Search</option>
+                      <option value="instagram">Instagram</option>
+                      <option value="nextdoor">Nextdoor</option>
+                      <option value="referral">Friend / Neighbor Referral</option>
+                      <option value="vet">Vet or Groomer</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
+              <hr class="form-divider" />
+
+              <!-- ── SECTION 2: About Your Dog ── -->
+              <fieldset>
+                <legend class="form-group-label">
+                  <div class="group-icon" aria-hidden="true">🐕</div>
+                  About Your Dog
+                </legend>
+
+                <div class="form-grid two-col">
+
+                  <div class="field">
+                    <label for="dog-name">Dog's Name <span class="required" aria-label="required">*</span></label>
+                    <input type="text" id="dog-name" name="dog_name" placeholder="Biscuit" required />
+                    <span class="error-msg" id="err-dog-name">Please enter your dog's name.</span>
+                  </div>
+
+                  <div class="field">
+                    <label for="dog-breed">Breed <span class="required" aria-label="required">*</span></label>
+                    <input type="text" id="dog-breed" name="dog_breed" placeholder="Golden Retriever" required />
+                    <span class="error-msg" id="err-dog-breed">Please enter your dog's breed.</span>
+                  </div>
+
+                  <div class="field">
+                    <label for="dog-age">Dog's Age <span class="required" aria-label="required">*</span></label>
+                    <select id="dog-age" name="dog_age" required>
+                      <option value="">— Select age —</option>
+                      <option value="puppy-under1">Puppy (under 1 year)</option>
+                      <option value="young-1-3">Young (1–3 years)</option>
+                      <option value="adult-4-7">Adult (4–7 years)</option>
+                      <option value="senior-8plus">Senior (8+ years)</option>
+                    </select>
+                    <span class="error-msg" id="err-dog-age">Please select your dog's age range.</span>
+                  </div>
+
+                  <div class="field">
+                    <label for="dog-weight">Approximate Weight</label>
+                    <select id="dog-weight" name="dog_weight">
+                      <option value="">— Select weight —</option>
+                      <option value="tiny">Under 15 lbs (Tiny)</option>
+                      <option value="small">15–30 lbs (Small)</option>
+                      <option value="medium">30–60 lbs (Medium)</option>
+                      <option value="large">60–90 lbs (Large)</option>
+                      <option value="xlarge">90+ lbs (Extra Large)</option>
+                    </select>
+                  </div>
+
+                  <!-- Gender -->
+                  <div class="field full">
+                    <label as="span">Gender <span class="required" aria-label="required">*</span></label>
+                    <div class="pill-group" role="radiogroup" aria-label="Dog's gender" aria-required="true">
+                      <input type="radio" name="dog_gender" id="gender-male" value="male" required />
+                      <label for="gender-male">🐾 Male</label>
+                      <input type="radio" name="dog_gender" id="gender-female" value="female" />
+                      <label for="gender-female">🌸 Female</label>
+                    </div>
+                    <span class="error-msg" id="err-gender">Please select your dog's gender.</span>
+                  </div>
+
+                  <!-- Spayed/Neutered -->
+                  <div class="field full">
+                    <label as="span">Is your dog spayed / neutered?</label>
+                    <div class="pill-group" role="radiogroup" aria-label="Spayed or neutered status">
+                      <input type="radio" name="spayed" id="spayed-yes" value="yes" />
+                      <label for="spayed-yes">✅ Yes</label>
+                      <input type="radio" name="spayed" id="spayed-no" value="no" />
+                      <label for="spayed-no">❌ No</label>
+                      <input type="radio" name="spayed" id="spayed-unsure" value="unsure" />
+                      <label for="spayed-unsure">🤔 Not sure</label>
+                    </div>
+                  </div>
+
+                  <!-- Dog friendly -->
+                  <div class="field full">
+                    <label as="span">Is your dog friendly with other dogs? <span class="required" aria-label="required">*</span></label>
+                    <div class="field-hint">We walk dogs in small groups of up to 4. Knowing this helps us place your pup appropriately.</div>
+                    <div class="pill-group" role="radiogroup" aria-label="Dog friendliness with other dogs" aria-required="true">
+                      <input type="radio" name="dog_friendly" id="friendly-yes" value="yes" required />
+                      <label for="friendly-yes">🐶 Yes, loves other dogs</label>
+                      <input type="radio" name="dog_friendly" id="friendly-selective" value="selective" />
+                      <label for="friendly-selective">🤔 Selective / needs intro</label>
+                      <input type="radio" name="dog_friendly" id="friendly-no" value="no" />
+                      <label for="friendly-no">🚫 Prefers solo walks</label>
+                    </div>
+                    <span class="error-msg" id="err-friendly">Please let us know how your dog does with other dogs.</span>
+                  </div>
+
+                  <!-- Energy level -->
+                  <div class="field full">
+                    <label for="energy-level">Energy Level</label>
+                    <div class="field-hint">Helps us match your pup to the right pace and trail type.</div>
+                    <div class="range-wrap">
+                      <div class="range-value" id="energy-display" aria-live="polite">Medium Energy 🐕</div>
+                      <input type="range" id="energy-level" name="energy_level" min="1" max="5" value="3" aria-label="Energy level from 1 (very calm) to 5 (very high energy)" />
+                      <div class="range-labels">
+                        <span>😴 Very Calm</span>
+                        <span>🚀 Very High Energy</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Medical / special needs -->
+                  <div class="field full">
+                    <label as="span">Does your dog have any medical conditions or special needs?</label>
+                    <div class="pill-group" role="group" aria-label="Special needs or conditions">
+                      <input type="checkbox" name="special" id="special-none" value="none" />
+                      <label for="special-none">No special needs</label>
+                      <input type="checkbox" name="special" id="special-meds" value="meds" />
+                      <label for="special-meds">💊 Takes medication</label>
+                      <input type="checkbox" name="special" id="special-mobility" value="mobility" />
+                      <label for="special-mobility">🐾 Mobility limitations</label>
+                      <input type="checkbox" name="special" id="special-anxiety" value="anxiety" />
+                      <label for="special-anxiety">😰 Anxiety</label>
+                      <input type="checkbox" name="special" id="special-reactive" value="reactive" />
+                      <label for="special-reactive">⚠️ Leash reactive</label>
+                      <input type="checkbox" name="special" id="special-senior" value="senior" />
+                      <label for="special-senior">👴 Senior dog</label>
+                    </div>
+                  </div>
+
+                  <div class="field full">
+                    <label for="dog-notes">Anything else we should know about your dog?</label>
+                    <div class="field-hint">Quirks, fears, favorite treats, funny habits — the more you share, the better we can care for them!</div>
+                    <textarea id="dog-notes" name="dog_notes" placeholder="Biscuit loves to splash in puddles and has a deep devotion to squirrels. He knows 'sit', 'stay', and 'leave it'..."></textarea>
+                  </div>
+
+                </div>
+              </fieldset>
+
+              <hr class="form-divider" />
+
+              <!-- ── SECTION 3: Walk Details ── -->
+              <fieldset>
+                <legend class="form-group-label">
+                  <div class="group-icon" aria-hidden="true">🌲</div>
+                  Walk Details
+                </legend>
+
+                <div class="form-grid two-col">
+
+                  <div class="field full">
+                    <label as="span">Type of Walk <span class="required" aria-label="required">*</span></label>
+                    <div class="pill-group" role="radiogroup" aria-label="Walk type" aria-required="true">
+                      <input type="radio" name="walk_type" id="walk-group" value="group" required />
+                      <label for="walk-group">🐶 Group Walk (from $28)</label>
+                      <input type="radio" name="walk_type" id="walk-private" value="private" />
+                      <label for="walk-private">🌟 Private Walk (from $45)</label>
+                      <input type="radio" name="walk_type" id="walk-sunrise" value="sunrise" />
+                      <label for="walk-sunrise">🌅 Sunrise Walk (from $32)</label>
+                    </div>
+                    <span class="error-msg" id="err-walk-type">Please select a walk type.</span>
+                  </div>
+
+                  <div class="field">
+                    <label for="walk-frequency">How often do you need walks?</label>
+                    <select id="walk-frequency" name="walk_frequency">
+                      <option value="">— Select frequency —</option>
+                      <option value="daily">Daily (5x / week)</option>
+                      <option value="weekdays">Weekdays only</option>
+                      <option value="3x">3x per week</option>
+                      <option value="1-2x">1–2x per week</option>
+                      <option value="occasional">Occasional / as needed</option>
+                      <option value="trial">Just trying it out</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label for="start-date">Preferred Start Date</label>
+                    <input type="date" id="start-date" name="start_date" />
+                  </div>
+
+                  <div class="field full">
+                    <label for="preferred-time">Preferred Walk Time</label>
+                    <select id="preferred-time" name="preferred_time">
+                      <option value="">— Select a time window —</option>
+                      <option value="sunrise">Early Morning (7–9am)</option>
+                      <option value="morning">Mid-Morning (9–11am)</option>
+                      <option value="midday">Midday (11am–1pm)</option>
+                      <option value="afternoon">Afternoon (1–4pm)</option>
+                      <option value="flexible">Flexible — any time works</option>
+                    </select>
+                  </div>
+
+                  <div class="field full">
+                    <label as="span">Does your dog have a preferred trail type?</label>
+                    <div class="pill-group" role="group" aria-label="Preferred trail types">
+                      <input type="checkbox" name="trail" id="trail-any" value="any" />
+                      <label for="trail-any">🌿 Any trail works</label>
+                      <input type="checkbox" name="trail" id="trail-redwood" value="redwood" />
+                      <label for="trail-redwood">🌲 Redwood forest</label>
+                      <input type="checkbox" name="trail" id="trail-hill" value="hill" />
+                      <label for="trail-hill">⛰️ Open hillside</label>
+                      <input type="checkbox" name="trail" id="trail-water" value="water" />
+                      <label for="trail-water">💧 Near water / creek</label>
+                      <input type="checkbox" name="trail" id="trail-flat" value="flat" />
+                      <label for="trail-flat">🛤️ Flat & easy</label>
+                    </div>
+                  </div>
+
+                  <div class="field full">
+                    <label for="gate-code">Gate Code / Key Instructions <span style="font-weight:500; text-transform:none; letter-spacing:0; color:var(--text-light);">(optional)</span></label>
+                    <div class="field-hint">If you have a gate code or specific entry instructions, let us know. This stays confidential.</div>
+                    <input type="text" id="gate-code" name="gate_code" placeholder="e.g. Side gate, code #1234" />
+                  </div>
+
+                  <div class="field full">
+                    <label for="additional-notes">Additional Notes or Questions</label>
+                    <textarea id="additional-notes" name="additional_notes" placeholder="Anything else we should know? Questions about our walks, pricing, or your specific situation are welcome here..."></textarea>
+                  </div>
+
+                </div>
+              </fieldset>
+
+              <hr class="form-divider" />
+
+              <!-- ── AGREEMENT ── -->
+              <div class="note-box" role="note">
+                <strong>📋 What happens next:</strong> After submitting this form, we'll review your pup's profile and reach out within 24 hours to schedule a <strong>free, no-obligation meet & greet</strong> — so your dog can meet us before their first walk!
+              </div>
+
+              <label class="checkbox-field" for="agree-terms">
+                <input type="checkbox" id="agree-terms" name="agree_terms" required />
+                <span>I agree to be contacted by Happy Trails Dog Walking via phone or email, and I understand that walk scheduling is subject to availability. <a href="#" style="color:var(--forest);">View our privacy policy</a>. <span class="required" aria-label="required">*</span></span>
+              </label>
+              <span class="error-msg" id="err-terms" style="margin-top:0.25rem;">Please accept the terms to continue.</span>
+
+              <div class="submit-area">
+                <button type="submit" class="btn btn-gold btn-lg" id="submit-btn">
+                  Send My Walk Request 🐾
+                </button>
+                <p class="submit-note">
+                  We respond within 24 hours · Your info is always kept private.<br>
+                  Questions? Email <a href="mailto:hello@happytrailsdogwalking.com">hello@happytrailsdogwalking.com</a>
+                </p>
+              </div>
+
+            </form>
+          </div><!-- /.form-card -->
+        </div><!-- /.form-main -->
+
+        <!-- ── ASIDE (desktop only) ── -->
+        <aside class="form-aside" aria-label="Why choose Happy Trails">
+          <div class="aside-card">
+            <div class="aside-title">Why Happy Trails?</div>
+            <ul class="aside-list" role="list">
+              <li>
+                <div class="ai" aria-hidden="true">✅</div>
+                <span>Fully insured & Pet First Aid certified</span>
+              </li>
+              <li>
+                <div class="ai" aria-hidden="true">📍</div>
+                <span>Live GPS tracking on every single walk</span>
+              </li>
+              <li>
+                <div class="ai" aria-hidden="true">📸</div>
+                <span>Photo update sent to you after each walk</span>
+              </li>
+              <li>
+                <div class="ai" aria-hidden="true">👥</div>
+                <span>Maximum 4 dogs per group walk</span>
+              </li>
+              <li>
+                <div class="ai" aria-hidden="true">🌲</div>
+                <span>Real Marin trails — not just sidewalks</span>
+              </li>
+              <li>
+                <div class="ai" aria-hidden="true">🐾</div>
+                <span>Free meet & greet before first walk</span>
+              </li>
+              <li>
+                <div class="ai" aria-hidden="true">⭐</div>
+                <span>5-star rated by Marin dog owners</span>
+              </li>
+            </ul>
+            <hr class="aside-divider" />
+            <div class="aside-contact">
+              <strong>Get in touch directly</strong>
+              📧 <a href="mailto:hello@happytrailsdogwalking.com">hello@happytrailsdogwalking.com</a><br>
+              📞 <a href="tel:+14155550190">(415) 555-0190</a><br><br>
+              Mon–Sat · 7am–6pm<br>
+              Mill Valley, CA 94941
+            </div>
+          </div>
+        </aside>
+
+      </div><!-- /.form-layout -->
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">Happy Trails 🐾</div>
+      <p class="footer-tagline">Professional Dog Walking · Marin County, CA</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="request.html">Book a Walk</a></li>
+        </ul>
+      </nav>
+      <div class="footer-paws" aria-hidden="true">🐾 🐾 🐾</div>
+      <p class="footer-copy">© 2025 Happy Trails Dog Walking · Mill Valley, CA · hello@happytrailsdogwalking.com</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Mobile nav ──
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.addEventListener('click', e => {
+      if (!e.target.closest('nav')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // ── Set min date to today ──
+    const dateInput = document.getElementById('start-date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+
+    // ── Energy range ──
+    const energySlider  = document.getElementById('energy-level');
+    const energyDisplay = document.getElementById('energy-display');
+    const energyLabels  = ['😴 Very Calm', '🐢 Calm & Steady', '🐕 Medium Energy', '⚡ High Energy', '🚀 Non-Stop Energy!'];
+    function updateEnergy() {
+      const val = parseInt(energySlider.value) - 1;
+      energyDisplay.textContent = energyLabels[val];
+      const pct = (parseInt(energySlider.value) - 1) / 4 * 100;
+      energySlider.style.background = `linear-gradient(to right, var(--forest) ${pct}%, var(--tan) ${pct}%)`;
+    }
+    energySlider.addEventListener('input', updateEnergy);
+    updateEnergy();
+
+    // ── Progress steps ──
+    const steps   = document.querySelectorAll('.step-item');
+    const fields1 = ['first-name','last-name','email','phone','address'];
+    const fields2 = ['dog-name','dog-breed','dog-age'];
+    function updateSteps() {
+      const s1done = fields1.every(id => document.getElementById(id).value.trim() !== '');
+      const s2done = fields2.every(id => document.getElementById(id).value.trim() !== '');
+      steps[0].classList.toggle('done',   s1done);
+      steps[1].classList.toggle('active', s1done && !s2done);
+      steps[1].classList.toggle('done',   s1done && s2done);
+      steps[2].classList.toggle('active', s1done && s2done);
+    }
+    [...fields1,...fields2].forEach(id => {
+      document.getElementById(id).addEventListener('input', updateSteps);
+    });
+
+    // ── Form validation & submit ──
+    const form = document.getElementById('walk-request-form');
+    const successScreen = document.getElementById('success-screen');
+
+    function showError(fieldId, errId, show) {
+      const field = document.getElementById(fieldId);
+      const err   = document.getElementById(errId);
+      if (!field || !err) return;
+      field.classList.toggle('error', show);
+      err.classList.toggle('show', show);
+    }
+
+    function validateForm() {
+      let valid = true;
+
+      // Text fields
+      [
+        ['first-name',  'err-first-name'],
+        ['last-name',   'err-last-name'],
+        ['email',       'err-email'],
+        ['phone',       'err-phone'],
+        ['address',     'err-address'],
+        ['dog-name',    'err-dog-name'],
+        ['dog-breed',   'err-dog-breed'],
+        ['dog-age',     'err-dog-age'],
+      ].forEach(([fid, eid]) => {
+        const el = document.getElementById(fid);
+        const empty = !el.value.trim();
+        const emailBad = fid === 'email' && el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+        const bad = empty || emailBad;
+        showError(fid, eid, bad);
+        if (bad) valid = false;
+      });
+
+      // Radio: gender
+      const genderChecked = document.querySelector('input[name="dog_gender"]:checked');
+      const genderErr = document.getElementById('err-gender');
+      genderErr.classList.toggle('show', !genderChecked);
+      if (!genderChecked) valid = false;
+
+      // Radio: dog_friendly
+      const friendlyChecked = document.querySelector('input[name="dog_friendly"]:checked');
+      const friendlyErr = document.getElementById('err-friendly');
+      friendlyErr.classList.toggle('show', !friendlyChecked);
+      if (!friendlyChecked) valid = false;
+
+      // Radio: walk_type
+      const walkChecked = document.querySelector('input[name="walk_type"]:checked');
+      const walkErr = document.getElementById('err-walk-type');
+      walkErr.classList.toggle('show', !walkChecked);
+      if (!walkChecked) valid = false;
+
+      // Checkbox: agree_terms
+      const agreeChecked = document.getElementById('agree-terms').checked;
+      const agreeErr = document.getElementById('err-terms');
+      agreeErr.classList.toggle('show', !agreeChecked);
+      if (!agreeChecked) valid = false;
+
+      return valid;
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (validateForm()) {
+        // Show success state
+        form.style.display = 'none';
+        successScreen.classList.add('show');
+        successScreen.focus();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Scroll to first error
+        const firstErr = form.querySelector('.error, .show');
+        if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+
+    // Live validation on blur
+    form.querySelectorAll('input, select, textarea').forEach(el => {
+      el.addEventListener('blur', () => {
+        if (el.hasAttribute('required') && !el.value.trim()) {
+          el.classList.add('error');
+        } else {
+          el.classList.remove('error');
+        }
+      });
+      el.addEventListener('input', () => {
+        if (el.value.trim()) el.classList.remove('error');
+      });
+    });
+  </script>
+</body>
+</html>
